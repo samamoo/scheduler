@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "components/Appointment/styles.scss";
 import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
@@ -41,17 +41,18 @@ export default function Appointment(props) {
       interviewer,
     };
     transition(SAVING);
+    console.log(mode)
     props.bookInterview(props.id, interview)
     .then(() => transition(SHOW))
-    .catch((err) => transition(ERROR_SAVE));
+    .catch((err) => transition(ERROR_SAVE, true)) //true?
   };
 
   const remove = function () {
-    transition(DELETING);
+    transition(DELETING, true);
     props
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
-      .catch((err) => transition(ERROR_DELETE));
+      .catch((err) => transition(ERROR_DELETE, true));
   };
 
   const edit = function (name, interviewer) {

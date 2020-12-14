@@ -31,5 +31,4 @@ const getInterviewersForDay = function (state, day) {
   return interviewers;
 };
 
-
-export { getAppointmentsForDay, getInterview, getInterviewersForDay };
+export { getAppointmentsForDay, getInterview, getInterviewersForDay};

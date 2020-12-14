@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [stack, setStack] = useState([initial]);
 
   const transition = function(mode, replace) {
-    const newStack = [...stack];
     if (replace) {
-      newStack.pop();
+      setStack(prev => ([...prev.slice(0, prev.length-1), mode]))
+    } else {
+      setStack(prev => ([...prev, mode]))
     }
-    newStack.push(mode);
-    setStack(newStack)
     setMode(mode)
   }
   const back = function() {
