@@ -55,15 +55,6 @@ export default function Appointment(props) {
       .catch((err) => transition(ERROR_DELETE, true));
   };
 
-  const edit = function (name, interviewer) {
-    const interview = {
-      student: name,
-      interviewer,
-    };
-    transition(SAVING);
-    props.editInterview(props.id, interview).then(() => transition(SHOW));
-  };
-
   return (
     <article className="appointment">
       <Header time={props.time} />
@@ -82,7 +73,7 @@ export default function Appointment(props) {
           interviewer={props.interview.interviewer.id}
           interviewers={props.interviewers}
           onCancel={(props.onCancel, back)}
-          onSave={edit}
+          onSave={save}
         />
       )}
       {mode === SAVING && <Status message="Saving" />}

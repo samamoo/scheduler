@@ -9,7 +9,7 @@ export default function useApplicationData() {
     appointments: {},
     interviewers: {}
   });
-  // console.log(state.days[0].spots)
+
 
   const setDay = day => setState({ ...state, day });
 
@@ -38,25 +38,7 @@ export default function useApplicationData() {
     }) 
     return days
   }
-  // const changeSpotsforDay = function (state, day, action) {
-  //   console.log("calling changeSpotsForDay")
 
-  //   let spots = 0;
-  //   for (const day1 of state.days) {
-  //     if (day1.name === day) {
-  //       spots = day1.appointments.length;
-  //       if (action === "Subtract") {
-  //         spots -= 1;
-  //         console.log(spots, "spots subtract")
-  //       } else if (action === "Add") {
-  //         spots += 1;
-  //         console.log(spots, "spots add")
-  //       }
-  //     }
-  //   }
-  // }
-// build a days array to update the state
-// in the days array, i'm updating the # of spots based on creating/deleting an appointmnet
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -86,18 +68,5 @@ export default function useApplicationData() {
     })
   }
 
-  const editInterview = function(id, interview) {
-    const appointment = {
-      ...state.appointments[id],
-      interview: { ...interview }
-    };
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment
-    };
-    return axios.put(`/api/appointments/${id}`, appointment)
-    .then(() => setState({...state, appointments}))
-  }
-
-  return { state, setDay, bookInterview, cancelInterview, editInterview  }
+  return { state, setDay, bookInterview, cancelInterview }
 }
