@@ -5,9 +5,18 @@ Interview Scheduler is a single page application built with React. Testing with 
 A user can view the schedule for a particular day of the week and see booked appointments and available appointment slots. The user can create an appointment by entering their name, selecting an interviewer and clicking SAVE. The user can edit their appointment as well as delete their appointment. Data is persisted by the API server using a PostgreSQL database.
 
 ## Final Product
-![]()
-![]()
-![]()
+!["Select a day and create an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler-book.gif?raw=true)
+!["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_delete.png?raw=true)
+!["Book an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_book.png?raw=true)
+!["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_delete.png?raw=true)
+
+## Dependencies
+- React
+- React-Dom
+- React-Scripts
+- Classnames
+- Axios
+- Normalize.CSS
 
 ## Setup
 
