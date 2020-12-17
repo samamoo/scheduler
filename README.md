@@ -11,11 +11,18 @@ A user can view the schedule for a particular day of the week and see booked app
 !["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_delete.png?raw=true)
 
 ## Dependencies
+- @testing-library/react
+- Babel
+- Prop-Types
 - React
 - React-Dom
 - React-Scripts
+- React Test Renderer
 - Classnames
 - Axios
+- Storybook
+- Node SASS
+
 - Normalize.CSS
 
 ## Setup
