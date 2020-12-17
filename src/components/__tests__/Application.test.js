@@ -92,7 +92,7 @@ describe("Application", () => {
   });
 
   it("loads data, edits an interview and keeps the spots remaining for Monday the same", async () => {
-    const { container} = render(<Application />);
+    const { container } = render(<Application />);
 
     await waitForElement(() => getByText(container, "Archie Cohen"));
     const appointment = getAllByTestId(
@@ -137,7 +137,7 @@ describe("Application", () => {
     const { container } = render(<Application />);
 
     await waitForElement(() => getByText(container, "Archie Cohen"));
-  
+
     const appointment = getAllByTestId(container, "appointment")[0];
 
     fireEvent.click(getByAltText(appointment, "Add"));
@@ -152,7 +152,9 @@ describe("Application", () => {
 
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
     await waitForElementToBeRemoved(() => getByText(appointment, "Saving"));
-    expect(getByText(appointment, "Could not save appointment.")).toBeInTheDocument();
+    expect(
+      getByText(appointment, "Could not save appointment.")
+    ).toBeInTheDocument();
     fireEvent.click(getByAltText(appointment, "Close"));
 
     expect(getByText(appointment, "Save")).toBeInTheDocument();
@@ -180,9 +182,11 @@ describe("Application", () => {
 
     expect(getByText(appointment, "Deleting")).toBeInTheDocument();
     await waitForElementToBeRemoved(() => getByText(appointment, "Deleting"));
-    expect(getByText(appointment, "Could not cancel appointment.")).toBeInTheDocument();
+    expect(
+      getByText(appointment, "Could not cancel appointment.")
+    ).toBeInTheDocument();
     fireEvent.click(getByAltText(appointment, "Close"));
     expect(getByAltText(appointment, "Edit")).toBeInTheDocument();
     expect(getByAltText(appointment, "Delete")).toBeInTheDocument();
-  })
+  });
 });
