@@ -6,7 +6,7 @@ A user can view the schedule for a particular day of the week and see booked app
 
 ## Final Product
 !["Select a day and create an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler-book.gif?raw=true)
-!["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_delete.png?raw=true)
+!["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler-delete.gif?raw=true)
 !["Book an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_book.png?raw=true)
 !["Delete an appointment"](https://github.com/samamoo/scheduler/blob/master/docs/scheduler_delete.png?raw=true)
 
