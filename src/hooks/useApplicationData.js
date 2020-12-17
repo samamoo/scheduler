@@ -20,11 +20,11 @@ export default function useApplicationData() {
       const days = all[0].data;
       const appointments = all[1].data;
       const interviewers = all[2].data;
-      // console.log(days[0].spots)
       setState((prev) => ({ ...prev, days, appointments, interviewers }));
     });
   }, []);
 
+  //Gets the remaining number of spots for a day
   const getSpots = function (id, appointments) {
     const days = state.days.map((day) => {
       if (day.appointments.includes(id)) {
@@ -38,6 +38,7 @@ export default function useApplicationData() {
     return days;
   };
 
+  // Saves data for a new or edited appointment
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -53,7 +54,7 @@ export default function useApplicationData() {
       setState({ ...state, appointments, days });
     });
   }
-
+  // Removes an appointment 
   const cancelInterview = function (id) {
     const appointment = {
       ...state.appointments[id],
