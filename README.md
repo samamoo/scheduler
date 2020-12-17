@@ -22,7 +22,6 @@ A user can view the schedule for a particular day of the week and see booked app
 - Axios
 - Storybook
 - Node SASS
-
 - Normalize.CSS
 
 ## Setup
